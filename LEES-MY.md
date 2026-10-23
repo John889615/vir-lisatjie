@@ -1,8 +1,11 @@
 # Vir Lisatjie
 
-A private slideshow that opens on her phone from a printed QR code. It runs off
-your own PC over your WiFi — nothing is published to the internet, and nobody
-outside your network can reach it.
+A slideshow that opens on her phone from a printed QR code: nine pages of
+photos, music and a question at the end.
+
+It's published on GitHub Pages, so it works from anywhere and the printed code
+never goes stale. You can also serve it from your own PC over WiFi while you're
+trying out changes.
 
 ---
 
@@ -84,15 +87,16 @@ glowing heart icon and opens without any browser chrome, like a real app.
 
 Currently playing: *Robert Grace — Home*.
 
-You don't have to name the song anything in particular. Drop any `.mp3` (or
-`.m4a`, `.ogg`, `.wav`) into the **musiek** folder and the app picks it up by
-itself. To swap songs, delete the old one and drop in the new one.
-
-If you keep more than one file in there, put the one you want in `inhoud.js`:
+To swap songs, put the new file in the **musiek** folder and write its name in
+`inhoud.js`:
 
 ```js
-const LIEDJIE = "musiek/Home.mp3";
+const LIEDJIE = "musiek/liedjie.mp3";
 ```
+
+The name has to be written there now that it's live — a website can't look
+inside a folder to see what's in it the way the local server could. `.mp3`,
+`.m4a`, `.ogg` and `.wav` all work.
 
 The music can't start on its own — phone browsers block that — so it begins the
 moment she taps **Kom in** on the first screen, and fades up over about four
@@ -183,7 +187,9 @@ her.
 | `fotos/` | the pictures |
 | `musiek/` | the song (any filename) |
 | `index.html`, `styl.css`, `app.js` | the app itself |
-| `bedien.py` | the little web server, and the QR maker |
-| `drukstuk/` | the printable QR card, made fresh on each run |
+| `maak_qr.py` | **makes the QR card for the live address** |
+| `bedien.py` | serves it locally over WiFi, for testing |
+| `sw.js` | what makes it work without signal |
+| `drukstuk/` | the printable QR card, made fresh each run |
 | `ikoon*.png`, `ikoon.svg` | the home-screen icon |
 | `gereedskap/` | the script that drew the icon |
