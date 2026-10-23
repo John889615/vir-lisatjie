@@ -185,7 +185,7 @@ her.
 | `Begin.cmd` | double-click this to start |
 | `inhoud.js` | **the words and photo names — edit this** |
 | `fotos/` | the pictures |
-| `musiek/` | the song (any filename) |
+| `musiek/` | the song — name it in `inhoud.js` |
 | `index.html`, `styl.css`, `app.js` | the app itself |
 | `maak_qr.py` | **makes the QR card for the live address** |
 | `bedien.py` | serves it locally over WiFi, for testing |
