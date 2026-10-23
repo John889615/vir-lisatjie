@@ -6,15 +6,62 @@ outside your network can reach it.
 
 ---
 
-## Running it
+## Live on the internet
+
+The app is published with GitHub Pages, so it works from anywhere — her phone
+doesn't need to be on your WiFi, and your PC doesn't need to be on at all.
+
+Its address never changes, which means **you print the QR code once** and it
+keeps working forever.
+
+```
+python maak_qr.py https://john889615.github.io/vir-lisatjie/
+```
+
+Once she's opened it the first time, it keeps working even with no signal at
+all — the photos, the music and the words are stored on her phone. That makes
+it something she can keep rather than something that only worked that one
+evening.
+
+### Changing something after it's live
+
+```
+git add -A
+git commit -m "nuwe woorde"
+git push
+```
+
+Give it about a minute and her phone has the new version. The QR code stays
+the same, so there's nothing to reprint.
+
+If you change the app itself (not just the wording), bump `KAS = "lisatjie-v1"`
+at the top of **sw.js** to `v2`, `v3` and so on. That tells every phone to throw
+its stored copy away and fetch the new one.
+
+### A note on what's public
+
+The repository is public, which is what GitHub Pages needs on a free account.
+That means the photos and the letter sit in a public repository, and they stay
+in its history even if you delete them later. Nobody is likely to guess the
+address, and the page asks search engines not to index it — but it isn't
+private, and it can't be made private after the fact. If that ever stops
+sitting right with you, say so and I'll move it somewhere the repository stays
+closed.
+
+---
+
+## Running it on your own WiFi
+
+You don't need this now that it's live, but it's handy for trying out changes
+before you push them.
 
 Double-click **Begin.cmd**.
 
 It will:
 
 1. Find your WiFi address and start serving the app.
-2. Open a print page with the QR code — print that and cut out the card.
-3. Keep running. Leave the window open while she's reading.
+2. Open a print page with a QR code for that local address.
+3. Keep running while you test.
 
 Press `Ctrl+C` in the window (or just close it) when you're done.
 
@@ -113,16 +160,17 @@ with wording.
 
 ## Worth knowing
 
-**Reprint the code on the day.** Your router hands out the address, and it can
-change when the PC reconnects. If the old printed code stops working, run
-`Begin.cmd` again and print the fresh one.
-
-If the code doesn't work at all, the window lists the other addresses on this
-PC. Try one of them directly:
+**Print the live code, not the local one.** `Begin.cmd` makes a QR code for
+your PC's address on the WiFi, which is only good while that PC is running.
+The one to print and give her is the live one:
 
 ```
-python bedien.py 192.168.0.5
+python maak_qr.py https://john889615.github.io/vir-lisatjie/
 ```
+
+**Test it yourself first.** Scan the printed card with your own phone, with
+WiFi switched off, so you know it works over mobile data the way it will for
+her.
 
 ---
 
