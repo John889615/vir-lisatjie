@@ -1,0 +1,11 @@
+# Die QR-kaartjie word elke keer vars gemaak
+drukstuk/
+
+# Python-gemors
+__pycache__/
+*.pyc
+
+# Windows / Mac gemors
+Thumbs.db
+desktop.ini
+.DS_Store

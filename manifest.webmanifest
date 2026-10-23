@@ -1,0 +1,17 @@
+{
+  "name": "Vir Lisatjie",
+  "short_name": "Lisatjie",
+  "description": "'n Brief vir Lisatjie.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#05080F",
+  "theme_color": "#05080F",
+  "lang": "af",
+  "icons": [
+    { "src": "ikoon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "ikoon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "ikoon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <radialGradient id="nag" cx="50%" cy="34%" r="80%">
+      <stop offset="0%"   stop-color="#1A1120"/>
+      <stop offset="100%" stop-color="#05080F"/>
+    </radialGradient>
+    <radialGradient id="vlam" cx="50%" cy="44%" r="52%">
+      <stop offset="0%"   stop-color="#FFEECD"/>
+      <stop offset="52%"  stop-color="#FFC46B"/>
+      <stop offset="100%" stop-color="#F2A85A"/>
+    </radialGradient>
+    <filter id="gloed" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="wyd"/>
+      <feColorMatrix in="wyd" type="matrix" result="roos"
+        values="1 0 0 0 0   0 .55 0 0 0   0 0 .62 0 0   0 0 0 .55 0"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.4" result="naby"/>
+      <feMerge>
+        <feMergeNode in="roos"/>
+        <feMergeNode in="naby"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="100" height="100" fill="url(#nag)"/>
+
+  <g transform="translate(0,2)">
+    <path d="M50 84 C22 62 9 45 9 32 C9 17 20 9 31 9 C39.5 9 46 13.5 50 20
+             C54 13.5 60.5 9 69 9 C80 9 91 17 91 32 C91 45 78 62 50 84 Z"
+          fill="#FFC46B" filter="url(#gloed)" opacity=".85"/>
+    <path d="M50 84 C22 62 9 45 9 32 C9 17 20 9 31 9 C39.5 9 46 13.5 50 20
+             C54 13.5 60.5 9 69 9 C80 9 91 17 91 32 C91 45 78 62 50 84 Z"
+          fill="url(#vlam)"/>
+  </g>
+</svg>
